@@ -22,22 +22,36 @@ class PrimeNumber
 # an argument and return the highest prime number under that number. For example, the 
 # highest prime number under 10 is 7.
 
-  # def highest_prime_number_under(number)
-  #   prime = number - 1
-  #   counter = 1
-  #   until is_prime?(prime)
-  #     prime -= 1
-  #   end
-  #   return prime
-  # end
+  def highest_prime_number_under(number)
+    prime = number - 1
+    counter = 1
+    until is_prime?(prime)
+      prime -= 1
+    end
+    return prime
+  end
 
 end
 
 RSpec.describe PrimeNumber do
   describe '#is_prime?' do
-    it 'should return true or false if the number is a prime number' do
+    it 'should return true if the number is a prime number' do
       prime = PrimeNumber.new
       expect(prime.is_prime?(11)).to eq(true)
+    end
+  end
+
+  describe '#is_prime?' do
+    it 'should return false if the number is a prime number' do
+      prime = PrimeNumber.new
+      expect(prime.is_prime?(10)).to eq(false)
+    end
+  end
+
+  describe '#highest_prime_number_under' do
+    it 'should return the highest prime number under that number' do
+      highest_number = PrimeNumber.new
+      expect(highest_number.highest_prime_number_under(30)).to eq(29)
     end
   end
 end
