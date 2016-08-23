@@ -1,0 +1,2 @@
+class ThesaurusController < ApplicationController
+end

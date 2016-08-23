@@ -1,0 +1,2 @@
+class Thesauru < ApplicationRecord
+end
